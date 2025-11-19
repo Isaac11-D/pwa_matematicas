@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio | Isaac</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2e7d32">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <h1>Problemas de Operaciones</h1>
+    <p>¡Resuelve como un campeón!</p>
+    <img src="assets/logo1.png" class="avatar" alt="Isaac">
+    <p><strong>Cano López Isaac • 6° Primaria</strong></p>
+  </header>
+
+  <div class="status" id="status">Detectando conexión...</div>
+
+  <div class="grid">
+    <a href="leccion.html" class="btn">
+      <span>Libro</span>
+      <div class="t">Ver Lección</div>
+      <div class="s">Teoría y ejemplos del libro</div>
+    </a>
+    <a href="problemas.html" class="btn">
+      <span>Calculadora</span>
+      <div class="t">50 Problemas</div>
+      <div class="s">¡Siempre en orden diferente!</div>
+    </a>
+    <div class="btn" onclick="noti()">
+      <span>Notificación</span>
+      <div class="t">Notificación Local</div>
+      <div class="s">¡Prueba que funciona!</div>
+    </div>
+    <div class="btn" onclick="alert('¡Sensores activados! Gira tu celular')">
+      <span>Teléfono</span>
+      <div class="t">Sensores</div>
+      <div class="s">¡Mueve el dispositivo!</div>
+    </div>
+  </div>
+
+  <footer>Funciona 100% sin internet • PWA 2025</footer>
+
+  <script>
+    function noti(){
+      if("Notification" in window){
+        Notification.requestPermission().then(p=>{
+          if(p==="granted") new Notification("¡Hola Isaac!", {body:"Tu app está lista", icon:"assets/logo2.png"});
+        });
+      }
+    }
+    function actualizar(){
+      document.getElementById('status').textContent = navigator.onLine ? "Conectado" : "¡Offline y todo funciona!";
+    }
+    window.addEventListener('online',actualizar);
+    window.addEventListener('offline',actualizar);
+    actualizar();
+    if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+  </script>
+</body>
+</html>

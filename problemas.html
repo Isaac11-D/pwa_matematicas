@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problemas | Isaac</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <a href="home.html">Inicio</a>
+    <h1>50 Problemas</h1>
+    <p>¡Siempre en orden diferente!</p>
+  </header>
+  <div class="con">
+    <div id="quiz"></div>
+  </div>
+
+  <script>
+    let lista = [], i = 0, aciertos = 0;
+    fetch('data/problemas.json')
+      .then(r => r.json())
+      .then(d => {
+        lista = d.problemas.sort(() => Math.random() - 0.5);
+        mostrar();
+      });
+    function mostrar(){
+        if(i >= lista.length){
+        document.getElementById('quiz').innerHTML = `
+            <div class="card fin">
+            <h2>¡TERMINASTE!</h2>
+            <p style="font-size:3rem">Acertaste <strong>${aciertos}</strong> de ${lista.length}</p>
+            <button class="rep" onclick="location.reload()">Volver a Jugar</button>
+            <br><br><a href="home.html" style="color:white">← Volver al inicio</a>
+            </div>`;
+        return;
+        }
+
+      const p = lista[i];
+      const ops = [...p.opciones].sort(() => Math.random() - 0.5);
+      document.getElementById('quiz').innerHTML = `
+        <div class="card">
+          <div class="num">Problema ${i+1} de ${lista.length}</div>
+          <div class="preg">${p.texto}</div>
+          <div class="ops">
+            ${ops.map(o=>`<button class="op" onclick="resp('${o}')">${o}</button>`).join('')}
+          </div>
+        </div>`;
+    }
+    function resp(r){
+      if(r === lista[i].correcta) aciertos++;
+      i++;
+      mostrar();
+    }
+    window.resp = resp;
+  </script>
+</body>
+</html>

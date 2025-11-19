@@ -1,0 +1,14 @@
+{
+  "problemas": [
+    {"texto": "Un camión lleva 12 cajas. En cada caja hay 25 paquetes y en cada paquete 8 lápices. ¿Cuántos lápices lleva el camión?", "opciones": ["2400","3000","240","2000"], "correcta": "2400"},
+    {"texto": "En una escuela hay 8 clases. Cada clase tiene 28 alumnos. ¿Cuántos alumnos hay en total?", "opciones": ["224","216","236","200"], "correcta": "224"},
+    {"texto": "Un libro cuesta 15 €. ¿Cuánto cuestan 7 ?", "opciones": ["95 €","105 €","100 €","110 €"], "correcta": "105 €"},
+    {"texto": "En un paquete caben 12 huevos. ¿Cuántos paquetes necesito para 96 huevos?", "opciones": ["8","9","7","10"], "correcta": "8"},
+    {"texto": "Ana tiene 48 caramelos. Los reparte entre sus 6 amigos por igual. ¿Cuántos le tocan a cada uno?", "opciones": ["6","7","8","9"], "correcta": "8"},
+    {"texto": "Un autobús lleva 45 pasajeros. Se bajan 18 y suben 23. ¿Cuántos pasajeros quedan?", "opciones": ["50","48","52","46"], "correcta": "50"},
+    {"texto": "Una tienda vende 36 camisetas el lunes, 42 el martes y 29 el miércoles. ¿Cuántas camisetas vendió en total?", "opciones": ["107","106","108","105"], "correcta": "107"},
+    {"texto": "Un rollo de tela tiene 120 metros. Se usan 35 metros para un vestido. ¿Cuántos metros sobran?", "opciones": ["85","75","95","80"], "correcta": "85"},
+    {"texto": "Un agricultor recoge 156 kg de naranjas y las mete en cajas de 12 kg. ¿Cuántas cajas llena?", "opciones": ["12","13","14","11"], "correcta": "13"},
+    {"texto": "En un cine hay 15 filas con 24 butacas cada una. ¿Cuántas butacas hay en total?", "opciones": ["360","350","370","340"], "correcta": "360"}
+  ]
+}

@@ -1,0 +1,177 @@
+/* styles.css - Estilo verde aventura para Isaac */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { 
+  font-family: 'Comic Neue', cursive; 
+  background: linear-gradient(135deg, #1b5e20, #66bb6a); 
+  color: white; 
+  min-height: 100vh;
+}
+
+/* Splash */
+.splash {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: float 5s infinite;
+}
+.splash h1 { 
+  font-family: 'Bangers', cursive; 
+  font-size: 5.5rem; 
+  text-shadow: 6px 6px 12px #000; 
+}
+.splash .loader {
+  width: 100px; height: 100px;
+  border: 12px solid #fff3;
+  border-top: 12px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 40px auto;
+}
+
+/* Header común */
+header {
+  background: #1b5e20;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 20px #0005;
+}
+header a { color: white; text-decoration: none; font-weight: bold; }
+header h1 { 
+  font-family: 'Bangers', cursive; 
+  font-size: 3.2rem; 
+  margin: 0.5rem 0;
+  text-shadow: 4px 4px 8px #000;
+}
+
+/* Home */
+.avatar {
+  width: 140px;
+  border-radius: 50%;
+  border: 8px solid white;
+  box-shadow: 0 15px 35px #0006;
+  margin: 20px auto;
+  display: block;
+  animation: float 5s infinite;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+.btn {
+  background: white;
+  color: #1b5e20;
+  padding: 2.5rem 1.5rem;
+  border-radius: 35px;
+  text-align: center;
+  box-shadow: 0 15px 40px #0005;
+  transition: all 0.4s;
+  text-decoration: none;
+  display: block;
+}
+.btn:hover {
+  transform: translateY(-15px) scale(1.06);
+  box-shadow: 0 30px 60px #0008;
+}
+.btn span { font-size: 5.5rem; display: block; margin-bottom: 12px; }
+.btn .t { font-size: 1.9rem; font-weight: bold; color: #2e7d32; }
+.btn .s { font-size: 1.15rem; color: #444; margin-top: 8px; }
+
+.status {
+  text-align: center;
+  padding: 1rem 2rem;
+  background: #fff3;
+  border-radius: 50px;
+  max-width: 420px;
+  margin: 1.5rem auto;
+  font-weight: bold;
+  backdrop-filter: blur(10px);
+}
+
+/* Lección y Problemas */
+.container {
+  max-width: 950px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+.card {
+  background: white;
+  color: #333;
+  border-radius: 35px;
+  padding: 3rem;
+  margin: 1rem 0;
+  box-shadow: 0 20px 50px #0004;
+  text-align: center;
+}
+.card h2 {
+  color: #2e7d32;
+  font-size: 2.8rem;
+  margin: 2rem 0;
+}
+.card p, .card ol {
+  font-size: 1.5rem;
+  line-height: 1.9;
+}
+.card img {
+  max-width: 100%;
+  border-radius: 20px;
+  margin: 2rem 0;
+  box-shadow: 0 10px 30px #0003;
+}
+.big-btn {
+  display: block;
+  margin: 3rem auto;
+  padding: 2rem 5rem;
+  background: #ff5722;
+  color: white;
+  font-size: 2.3rem;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  box-shadow: 0 15px 40px #f4433666;
+  font-family: 'Bangers', cursive;
+}
+.big-btn:hover { transform: scale(1.1); }
+
+/* Problemas */
+.preg-num { font-size: 1.7rem; color: #2e7d32; font-weight: bold; }
+.preg-text { font-size: 2.2rem; margin: 2rem 0; font-weight: bold; }
+.ops { display: grid; gap: 1.5rem; margin: 2rem 0; }
+.op-btn {
+  padding: 2rem;
+  font-size: 1.9rem;
+  background: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px #0003;
+  transition: 0.3s;
+}
+.op-btn:hover { background: #f57c00; transform: scale(1.08); }
+
+.final {
+  background: #1b5e20;
+  color: white;
+  padding: 3rem;
+  border-radius: 35px;
+}
+.rep-btn {
+  padding: 2rem 5rem;
+  background: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 2.2rem;
+  cursor: pointer;
+  margin: 2rem;
+}
+
+/* Animaciones */
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-25px)} }
+@keyframes spin { to { transform: rotate(360deg) } }
